@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="AnxietyDiary.Views.InfoDisplayView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="Ångest (1-10)" />
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="Typ av oro" />
+            <Picker
+                Grid.Row="1"
+                Grid.Column="0"
+                ItemsSource="{Binding AnxietyLevelComboBoxList}"
+                SelectedItem="{Binding SelectedEntry.AnxietyLevel}" />
+            <Picker
+                Grid.Row="1"
+                Grid.Column="1"
+                ItemsSource="{Binding AnxietyTypeComboBoxList}"
+                SelectedIndex="{Binding SelectedEntry.AnxietyType}" />
+        </Grid>
+
+        <Editor Grid.Row="2" Text="{Binding SelectedEntry.EntryText}" />
+
+    </Grid>
+</ContentView>
