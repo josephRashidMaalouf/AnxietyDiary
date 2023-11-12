@@ -9,5 +9,7 @@ public partial class InfoDisplayView : ContentView
 		InitializeComponent();
 
         BindingContext = new InfoDisplayViewViewModel();
+
+		
     }
 }

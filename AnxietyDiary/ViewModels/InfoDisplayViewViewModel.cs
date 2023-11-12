@@ -9,7 +9,7 @@ public class InfoDisplayViewViewModel : ObservableObject
 {
     private EntryModel _selectedEntry;
     private List<int> _anxietyLevelComboBoxList = new () { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    private List<string> _anxietyTypeComboBoxList = new() {"Ingen oro", "Aktuell oro", "Hypotetisk oro"};
+    private List<string> _anxietyTypeComboBoxList = new() {"Annat", "Aktuell oro", "Hypotetisk oro"};
     
 
 

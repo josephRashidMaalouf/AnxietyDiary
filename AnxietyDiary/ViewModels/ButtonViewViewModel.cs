@@ -8,15 +8,24 @@ namespace AnxietyDiary.ViewModels;
 
 public class ButtonViewViewModel : ObservableObject
 {
-    public EntryModel SelectedEntry { get; set; }
+    private EntryModel _selectedEntry;
 
-    
+    public EntryModel? SelectedEntry
+    {
+        get => _selectedEntry;
+        set
+        {
+            _selectedEntry = value;
+            RemoveEntryCommand.NotifyCanExecuteChanged();
+        } 
+    }
+
 
     #region Commands
 
     public IRelayCommand AddNewEntryCommand { get; }
     public IRelayCommand RemoveEntryCommand { get; }
-    public IRelayCommand InformationCommand { get; }
+    public IRelayCommand SaveCommand { get; }
     public IRelayCommand SummaryCommand { get; }
 
     #endregion
@@ -25,10 +34,11 @@ public class ButtonViewViewModel : ObservableObject
     {
         AddNewEntryCommand = new RelayCommand(AddNewEntryCommandExecute, AddNewEntryCommandCanExecute);
         RemoveEntryCommand = new RelayCommand(RemoveEntryCommandExecute, RemoveEntryCommandCanExecute);
-        InformationCommand = new RelayCommand(InformationCommandExecute, InformationCommandCanExecute);
+        SaveCommand = new RelayCommand(SaveCommandExecute, SaveCommandCanExecute);
         SummaryCommand = new RelayCommand(SummaryCommandExecute, SummaryCommandCanExecute);
 
         EntryManager.EntrySelected += SetNewSelectedEntry;
+        
     }
 
     private void SetNewSelectedEntry(EntryModel selectedEntry)
@@ -48,24 +58,26 @@ public class ButtonViewViewModel : ObservableObject
         throw new NotImplementedException();
     }
 
-    private bool InformationCommandCanExecute()
+    private bool SaveCommandCanExecute()
     {
-        throw new NotImplementedException();
+        //implement condition where false when nothing in entry list?
+        return true;
     }
 
-    private void InformationCommandExecute()
+    private void SaveCommandExecute()
     {
-        throw new NotImplementedException();
+        EntryManager.SaveEntriesToFile();
     }
 
     private bool RemoveEntryCommandCanExecute()
     {
-        throw new NotImplementedException();
+        return SelectedEntry is not null;
     }
 
     private void RemoveEntryCommandExecute()
     {
-        throw new NotImplementedException();
+        EntryManager.OnEntryDeleted(SelectedEntry); // send to entryview
+        SelectedEntry = null;
     }
 
     private bool AddNewEntryCommandCanExecute()

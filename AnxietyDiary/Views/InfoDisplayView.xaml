@@ -36,7 +36,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 ItemsSource="{Binding AnxietyTypeComboBoxList}"
-                SelectedIndex="{Binding SelectedEntry.AnxietyType}" />
+                SelectedItem="{Binding SelectedEntry.AnxietyType}" />
         </Grid>
 
         <Editor Grid.Row="2" Text="{Binding SelectedEntry.EntryText}" />

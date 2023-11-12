@@ -1,12 +1,16 @@
-﻿namespace AnxietyDiary
+﻿using AnxietyDiary.Managers;
+
+namespace AnxietyDiary
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        
 
         public MainPage()
         {
             InitializeComponent();
+
+            
         }
 
     }

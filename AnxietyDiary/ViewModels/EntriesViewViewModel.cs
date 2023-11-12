@@ -32,13 +32,29 @@ public class EntriesViewViewModel : ObservableObject
     public EntriesViewViewModel()
     {
         EntryManager.NewEntryMade += AddNewEntry;
+        EntryManager.EntryDeleted += DeleteEntry;
 
-        
+        EntryManager.LoadEntriesFromFile();
+
+        foreach (var entry in EntryManager.Entries)
+        {
+            Entries.Add(entry);
+        }
+
+    }
+
+    private void DeleteEntry(EntryModel entry)
+    {
+        //Ask if the user is sure
+
+        Entries.Remove(entry);
+        EntryManager.Entries.Remove(entry);
     }
 
     private void AddNewEntry(EntryModel newEntry)
     {
         Entries.Add(newEntry);
+        EntryManager.Entries.Add(newEntry);
     }
 
 
