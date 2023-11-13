@@ -17,7 +17,15 @@
         <!--<ScrollView/>-->
 
         <views:EntriesView Grid.Row="0" Grid.Column="0" />
-        <views:InfoDisplayView Grid.Row="0" Grid.Column="1" />
+        <views:InfoDisplayView
+            x:Name="InfoDisplayView"
+            Grid.Row="0"
+            Grid.Column="1" />
+        <views:SummaryView
+            x:Name="SummaryView"
+            Grid.Row="0"
+            Grid.Column="1"
+            IsVisible="False" />
         <views:ButtonView
             Grid.Row="1"
             Grid.Column="0"

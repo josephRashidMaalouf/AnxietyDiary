@@ -50,12 +50,15 @@ public class ButtonViewViewModel : ObservableObject
 
     private bool SummaryCommandCanExecute()
     {
-        throw new NotImplementedException();
+        //make condition that there needs to be entries
+        return true;
     }
 
     private void SummaryCommandExecute()
     {
-        throw new NotImplementedException();
+        //Tell EntryManager to send list of entries to summaryViewModel
+        //Tell main View to show Summary
+        EntryManager.OnSummaryRequested(); 
     }
 
     private bool SaveCommandCanExecute()

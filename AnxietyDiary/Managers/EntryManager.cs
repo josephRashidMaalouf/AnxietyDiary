@@ -6,7 +6,7 @@ namespace AnxietyDiary.Managers;
 
 public static class EntryManager
 {
-    private static readonly List<EntryModel> _entries = new List<EntryModel>();
+    private static readonly List<EntryModel> _entries = new ();
 
     static string DirPath = FileSystem.Current.AppDataDirectory;
     static string FullPath = Path.Combine(DirPath, "entries.json");
@@ -23,8 +23,12 @@ public static class EntryManager
     public static event Action<EntryModel> NewEntryMade;
     public static event Action<EntryModel> EntrySelected;
     public static event Action<EntryModel> EntryDeleted;
-   
+    public static event Action<List<EntryModel>> SummaryRequested;
 
+    public static void OnSummaryRequested()
+    {
+        SummaryRequested.Invoke(Entries);
+    }
     public static void OnNewEntryMade(EntryModel newEntry)
     {
         NewEntryMade.Invoke(newEntry);

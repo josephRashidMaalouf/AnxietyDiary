@@ -4,10 +4,13 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <ListView ItemsSource="{Binding Entries}" SelectedItem="{Binding SelectedEntry}" SelectionMode="Single">
+    <ListView
+        ItemsSource="{Binding Entries}"
+        SelectedItem="{Binding SelectedEntry}"
+        SelectionMode="Single">
         <ListView.ItemTemplate>
             <DataTemplate>
-                        <TextCell Detail="{Binding TimeOfEntry}" Text="{Binding ListDisplayDate}" />
+                <TextCell Detail="{Binding TimeOfEntry}" Text="{Binding ListDisplayDate}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

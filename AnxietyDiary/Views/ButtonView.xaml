@@ -8,8 +8,8 @@
         HorizontalOptions="Center"
         Spacing="10">
         <Button Command="{Binding AddNewEntryCommand}" Text="Add" />
-        <Button Text="Remove" Command="{Binding RemoveEntryCommand}" />
-        <Button Text="Save" Command="{Binding SaveCommand}"/>
-        <Button Text="Summary" />
+        <Button Command="{Binding RemoveEntryCommand}" Text="Remove" />
+        <Button Command="{Binding SaveCommand}" Text="Save" />
+        <Button Command="{Binding SummaryCommand}" Text="Summary" />
     </HorizontalStackLayout>
 </ContentView>
