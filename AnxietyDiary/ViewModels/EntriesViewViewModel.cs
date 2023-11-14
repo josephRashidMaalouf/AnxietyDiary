@@ -28,6 +28,7 @@ public class EntriesViewViewModel : ObservableObject
         }
     }
 
+    
 
     public EntriesViewViewModel()
     {

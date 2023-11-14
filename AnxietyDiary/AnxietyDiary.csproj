@@ -60,6 +60,9 @@
 	  <MauiXaml Update="Views\EntriesView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\FirstPageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\InfoDisplayView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -70,6 +73,12 @@
 
 	<ItemGroup>
 	  <Folder Include="Managers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\FirstPageView.xaml.cs">
+	    <DependentUpon>FirstPageView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

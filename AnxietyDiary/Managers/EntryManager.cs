@@ -20,6 +20,7 @@ public static class EntryManager
         }
     }
 
+    public static event Action ShowEntryFormsRequested;
     public static event Action<EntryModel> NewEntryMade;
     public static event Action<EntryModel> EntrySelected;
     public static event Action<EntryModel> EntryDeleted;
@@ -73,4 +74,8 @@ public static class EntryManager
         await Shell.Current.DisplayAlert("Saved", "Your entries have been saved", "Ok");
     }
 
+    public static void OnShowEntryFormsRequested()
+    {
+        ShowEntryFormsRequested?.Invoke();
+    }
 }

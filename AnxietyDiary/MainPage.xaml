@@ -21,6 +21,10 @@
             x:Name="InfoDisplayView"
             Grid.Row="0"
             Grid.Column="1" />
+        <views:FirstPageView
+            x:Name="FirstPageView"
+            Grid.Row="0"
+            Grid.Column="1" />
         <views:SummaryView
             x:Name="SummaryView"
             Grid.Row="0"

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnxietyDiary.Views.FirstPageView" Background="white">
+    <Label >
+        Registrera din oro vid tre tidpunkter varje dag (bestäm innan vid vilka tidpunkter du ska registrera). 
+
+        Skriv vad din oro handlar om, skatta ångestnivån enligt skalan nedan och ange om oron rör ett aktuellt problem (Typ 1) eller en hypotetisk situation (Typ 2).
+
+        Ångest skala:
+        0 = ingen ångest
+        5 = måttlig ångest
+        10 = extrem ångest
+    </Label>
+</ContentView>
