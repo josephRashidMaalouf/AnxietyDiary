@@ -9,7 +9,7 @@ public static class EntryManager
     private static readonly List<EntryModel> _entries = new ();
 
     static string DirPath = FileSystem.Current.AppDataDirectory;
-    static string FullPath = Path.Combine(DirPath, "entries.json");
+    static string FullPath = Path.Combine(DirPath, "beteendeobservationer.json");
 
 
     public static List<EntryModel> Entries
@@ -65,8 +65,6 @@ public static class EntryManager
 
     public static async Task SaveEntriesToFile()
     {
-        
-
         var jsonString = JsonSerializer.Serialize(Entries);
 
         File.WriteAllText(FullPath, jsonString);

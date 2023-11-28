@@ -12,7 +12,8 @@
         <Editor
             Grid.Row="1"
             Grid.Column="0"
-            Placeholder="Beskriv kortfattat och konkret situationen." />
+            Placeholder="Beskriv kortfattat och konkret situationen."
+            Text="{Binding SelectedEntry.SituationText}" />
 
         <Label
             Grid.Row="0"
@@ -23,7 +24,7 @@
             Grid.Row="1"
             Grid.Column="1"
             ItemsSource="{Binding AnxietyLevelComboBoxList}"
-            SelectedItem="{Binding SelectedEntry.AnxietyLevel}"/>
+            SelectedItem="{Binding SelectedEntry.AnxietyLevel}" />
 
         <Label
             Grid.Row="2"
@@ -33,7 +34,8 @@
         <Editor
             Grid.Row="3"
             Grid.Column="0"
-            Placeholder="Försök återge tankarna ordagrant." />
+            Placeholder="Försök återge tankarna ordagrant."
+            Text="{Binding SelectedEntry.ThoughtsText}" />
         <Label
             Grid.Row="2"
             Grid.Column="1"
@@ -41,7 +43,8 @@
         <Editor
             Grid.Row="3"
             Grid.Column="1"
-            Placeholder="Vad gjorde du?" />
+            Placeholder="Vad gjorde du?"
+            Text="{Binding SelectedEntry.ActionsText}" />
         <Label
             Grid.Row="4"
             Grid.Column="0"
@@ -50,12 +53,9 @@
         <Editor
             Grid.Row="5"
             Grid.Column="0"
-            Placeholder="Vad blev effekten av ditt handlande" />
-
-
-
-
-
+            Grid.ColumnSpan="2"
+            Placeholder="Vad blev effekten av ditt handlande"
+            Text="{Binding SelectedEntry.ResultsText}" />
 
     </Grid>
 </ContentView>

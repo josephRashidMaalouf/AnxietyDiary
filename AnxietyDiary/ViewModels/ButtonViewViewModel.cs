@@ -90,7 +90,8 @@ public class ButtonViewViewModel : ObservableObject
 
     private void AddNewEntryCommandExecute()
     {
-        EntryManager.OnNewEntryMade(new EntryModel()); //Send to EntryView
+        var newEntry = new EntryModel();
+        EntryManager.OnNewEntryMade(newEntry); //Send to EntryView and InfoDisplayView
     }
 
     #endregion

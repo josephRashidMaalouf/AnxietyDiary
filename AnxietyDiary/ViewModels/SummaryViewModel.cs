@@ -26,16 +26,23 @@ public class SummaryViewModel : ObservableObject
 
     private void CreateSummary(List<EntryModel> entryList)
     {
-        SummaryText = string.Empty;
+        SummaryText = String.Empty;
 
         foreach (var entry in entryList)
         {
             if (!SummaryText.Contains(entry.ListDisplayDate))
             {
+                SummaryText += "########################" + "\n";
                 SummaryText += entry.ListDisplayDate + "\n";
             }
+            SummaryText += $"---------------------------------- \n";
+            SummaryText += $"\tTid: {entry.TimeOfEntry} \n";
+            SummaryText += $"\t[Situation] \n\t{entry.SituationText}\n";
+            SummaryText += $"\t[Känsla] \n\t{entry.AnxietyLevel}\n";
+            SummaryText += $"\t[Tankar] \n\t{entry.ThoughtsText}\n";
+            SummaryText += $"\t[Handling] \n\t{entry.ActionsText}\n";
+            SummaryText += $"\t[Resultat] \n\t{entry.ResultsText}\n";
 
-            SummaryText += $"\t{entry.TimeOfEntry} \n| {entry.EntryText} \n| Ångest nivå: {entry.AnxietyLevel} \n| Typ av oro: {entry.AnxietyType}\n\n";
         }
     }
 }

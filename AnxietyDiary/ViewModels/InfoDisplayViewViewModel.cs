@@ -8,11 +8,8 @@ namespace AnxietyDiary.ViewModels;
 public class InfoDisplayViewViewModel : ObservableObject
 {
     private EntryModel _selectedEntry;
-    private List<int> _anxietyLevelComboBoxList = new () { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    private List<string> _anxietyTypeComboBoxList = new() {"Annat", "Aktuell oro", "Hypotetisk oro"};
+    private List<int> _anxietyLevelComboBoxList = new ();
     
-
-
     #region Props
 
     public EntryModel SelectedEntry
@@ -31,16 +28,23 @@ public class InfoDisplayViewViewModel : ObservableObject
         get => _anxietyLevelComboBoxList;
     }
 
-    public List<string> AnxietyTypeComboBoxList
-    {
-        get => _anxietyTypeComboBoxList;
-    }
 
     #endregion
 
     public InfoDisplayViewViewModel()
     {
+        for (int i = 0; i <= 100; i++)
+        {
+            AnxietyLevelComboBoxList.Add(i);
+        }
+
         EntryManager.EntrySelected += SetSelectedEntry;
+        EntryManager.NewEntryMade += SetNewEntry;
+    }
+
+    private void SetNewEntry(EntryModel newEntry)
+    {
+        SelectedEntry = newEntry;
     }
 
     private void SetSelectedEntry(EntryModel selectedEntry)

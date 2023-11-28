@@ -7,10 +7,12 @@ public class EntryModel : ObservableObject
 {
     private DateOnly _date;
     private TimeOnly _timeOfEntry;
-    private string _entryText;
     private string _listDisplayInfo;
-    private string _anxietyType;
     private int _anxietyLevel;
+    private string _situationText;
+    private string _thoughtsText;
+    private string _actionsText;
+    private string _resultsText;
 
     #region Props
     
@@ -25,16 +27,6 @@ public class EntryModel : ObservableObject
         }
     }
 
-    public string AnxietyType
-    {
-        get => _anxietyType;
-        set
-        {
-            if (value == _anxietyType) return;
-            _anxietyType = value;
-            OnPropertyChanged();
-        }
-    }
 
     public string ListDisplayDate
     {
@@ -69,13 +61,46 @@ public class EntryModel : ObservableObject
         }
     }
 
-    public string EntryText
+    public string SituationText
     {
-        get => _entryText;
+        get => _situationText;
         set
         {
-            if (value == _entryText) return;
-            _entryText = value;
+            if (value == _situationText) return;
+            _situationText = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public string ThoughtsText
+    {
+        get => _thoughtsText;
+        set
+        {
+            if (value == _thoughtsText) return;
+            _thoughtsText = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public string ActionsText
+    {
+        get => _actionsText;
+        set
+        {
+            if (value == _actionsText) return;
+            _actionsText = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public string ResultsText
+    {
+        get => _resultsText;
+        set
+        {
+            if (value == _resultsText) return;
+            _resultsText = value;
             OnPropertyChanged();
         }
     }
@@ -87,10 +112,11 @@ public class EntryModel : ObservableObject
         _date = DateOnly.FromDateTime(DateTime.Now);
         _timeOfEntry = TimeOnly.FromDateTime(DateTime.Now);
 
-        _anxietyType = string.Empty;
         _anxietyLevel = 1;
 
-        _entryText = string.Empty;
-
+        _situationText = string.Empty;
+        _thoughtsText = string.Empty;
+        _actionsText = string.Empty;
+        _resultsText = string.Empty;
     }
 }
