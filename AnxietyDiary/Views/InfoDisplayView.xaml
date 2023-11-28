@@ -3,44 +3,59 @@
     x:Class="AnxietyDiary.Views.InfoDisplayView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Grid>
+    <Grid ColumnDefinitions="*,*" RowDefinitions="auto,*,auto,*,auto,*">
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Situation" />
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
+        <Editor
+            Grid.Row="1"
+            Grid.Column="0"
+            Placeholder="Beskriv kortfattat och konkret situationen." />
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Label
-                Grid.Row="0"
-                Grid.Column="0"
-                Text="Ångest (1-10)" />
-            <Label
-                Grid.Row="0"
-                Grid.Column="1"
-                Text="Typ av oro" />
-            <Picker
-                Grid.Row="1"
-                Grid.Column="0"
-                ItemsSource="{Binding AnxietyLevelComboBoxList}"
-                SelectedItem="{Binding SelectedEntry.AnxietyLevel}" />
-            <Picker
-                Grid.Row="1"
-                Grid.Column="1"
-                ItemsSource="{Binding AnxietyTypeComboBoxList}"
-                SelectedItem="{Binding SelectedEntry.AnxietyType}" />
-        </Grid>
+        <Label
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="Känsla (0-100)" />
 
-        <Editor Grid.Row="2" Text="{Binding SelectedEntry.EntryText}" />
+        <Picker
+            Grid.Row="1"
+            Grid.Column="1"
+            ItemsSource="{Binding AnxietyLevelComboBoxList}"
+            SelectedItem="{Binding SelectedEntry.AnxietyLevel}"/>
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Tankar" />
+
+        <Editor
+            Grid.Row="3"
+            Grid.Column="0"
+            Placeholder="Försök återge tankarna ordagrant." />
+        <Label
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="Handling" />
+        <Editor
+            Grid.Row="3"
+            Grid.Column="1"
+            Placeholder="Vad gjorde du?" />
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Resultat" />
+
+        <Editor
+            Grid.Row="5"
+            Grid.Column="0"
+            Placeholder="Vad blev effekten av ditt handlande" />
+
+
+
+
+
 
     </Grid>
 </ContentView>
